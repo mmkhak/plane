@@ -30,7 +30,6 @@ const LabelsSettingsPage = observer(() => {
   // Enable Auto Scroll for Labels list
   useEffect(() => {
     const element = scrollableContainerRef.current;
-
     if (!element) return;
 
     return combine(
@@ -38,7 +37,7 @@ const LabelsSettingsPage = observer(() => {
         element,
       })
     );
-  }, [scrollableContainerRef?.current]);
+  }, []);
 
   if (workspaceUserInfo && !canPerformProjectMemberActions) {
     return <NotAuthorizedView section="settings" isProjectView />;

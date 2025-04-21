@@ -101,7 +101,7 @@ const CreateWorkspacePage = observer(() => {
                 <CreateWorkspaceForm
                   onSubmit={onSubmit}
                   defaultValues={defaultValues}
-                  setDefaultValues={setDefaultValues as any}
+                  setDefaultValues={setDefaultValues as React.Dispatch<React.SetStateAction<IWorkspace>>}
                 />
               </div>
             </div>

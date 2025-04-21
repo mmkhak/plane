@@ -11,7 +11,7 @@ import { useCycleFilter, useProject } from "@/hooks/store";
 
 const CYCLE_VIEW_LAYOUTS: {
   key: TCycleLayoutOptions;
-  icon: any;
+  icon: React.ComponentType<{ className?: string; size?: number }>;
   title: string;
 }[] = [
   {

@@ -62,9 +62,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="manifest" href="/manifest.json" />
         {/* preloading */}
         <link rel="preload" href={`${API_BASE_URL}/api/instances/`} as="fetch" crossOrigin="use-credentials" />
-        <link rel="preload" href={`${API_BASE_URL}/api/users/me/ `} as="fetch" crossOrigin="use-credentials" />
-        <link rel="preload" href={`${API_BASE_URL}/api/users/me/profile/ `} as="fetch" crossOrigin="use-credentials" />
-        <link rel="preload" href={`${API_BASE_URL}/api/users/me/settings/ `} as="fetch" crossOrigin="use-credentials" />
+        <link rel="preload" href={`${API_BASE_URL}/api/users/me/`} as="fetch" crossOrigin="use-credentials" />
+        <link rel="preload" href={`${API_BASE_URL}/api/users/me/profile/`} as="fetch" crossOrigin="use-credentials" />
+        <link rel="preload" href={`${API_BASE_URL}/api/users/me/settings/`} as="fetch" crossOrigin="use-credentials" />
         
         <link
           href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"

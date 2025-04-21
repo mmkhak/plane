@@ -17,6 +17,7 @@ import { E_PASSWORD_STRENGTH, getPasswordStrength } from "@/helpers/password.hel
 // services
 import { AuthService } from "@/services/auth.service";
 import { UserService } from "@/services/user.service";
+import { EAuthenticationErrorCodes } from "@/helpers/authentication.helper";
 
 export interface FormValues {
   old_password: string;
@@ -84,7 +85,7 @@ const SecurityPage = observer(() => {
       });
     } catch (err: unknown) {
       const error = err as { error_code?: string; error?: string };
-      const errorInfo = error.error_code ? authErrorHandler(error.error_code) : null;
+      const errorInfo = error.error_code ? authErrorHandler(error.error_code as EAuthenticationErrorCodes) : null;
       setToast({
         type: TOAST_TYPE.ERROR,
         title: errorInfo?.title ?? t("auth.common.password.toast.error.title"),

@@ -12,6 +12,12 @@ import { SITE_DESCRIPTION, SITE_NAME } from "@plane/constants";
 import { API_BASE_URL, cn } from "@/helpers/common.helper";
 // local
 import { AppProvider } from "./provider";
+import { Vazirmatn } from 'next/font/google'
+
+const vazirmatn = Vazirmatn({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: "Plane | Simple, extensible, open-source project management tool.",
@@ -41,7 +47,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const isSessionRecorderEnabled = parseInt(process.env.NEXT_PUBLIC_ENABLE_SESSION_RECORDER || "0");
 
   return (
-    <html lang="en">
+    <html lang="en" className={vazirmatn.className}>
       <head>
         <meta name="theme-color" content="#fff" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
@@ -66,10 +72,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preload" href={`${API_BASE_URL}/api/users/me/profile/`} as="fetch" crossOrigin="use-credentials" />
         <link rel="preload" href={`${API_BASE_URL}/api/users/me/settings/`} as="fetch" crossOrigin="use-credentials" />
         
-        <link
-          href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
-          rel="stylesheet"
-        />
         <link
           rel="preload"
           href={`${API_BASE_URL}/api/users/me/workspaces/?v=${Date.now()}`}

@@ -94,7 +94,7 @@ const SetPasswordPage = observer(() => {
       if (!csrfToken) throw new Error("csrf token not found");
       await handleSetPassword(csrfToken, { password: passwordFormData.password });
       router.push("/");
-    } catch (err: { error?: string } | Error) {
+    } catch (err: any) {
       setToast({
         type: TOAST_TYPE.ERROR,
         title: t("common.errors.default.title"),

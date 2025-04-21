@@ -12,12 +12,11 @@ import { PasswordStrengthMeter } from "@/components/account";
 import { PageHead } from "@/components/core";
 import { ProfileSettingContentHeader, ProfileSettingContentWrapper } from "@/components/profile";
 // helpers
-import { authErrorHandler } from "@/helpers/authentication.helper";
+import { authErrorHandler, EAuthenticationErrorCodes } from "@/helpers/authentication.helper";
 import { E_PASSWORD_STRENGTH, getPasswordStrength } from "@/helpers/password.helper";
 // services
 import { AuthService } from "@/services/auth.service";
 import { UserService } from "@/services/user.service";
-import { EAuthenticationErrorCodes } from "@/helpers/authentication.helper";
 
 export interface FormValues {
   old_password: string;

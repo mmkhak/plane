@@ -1,4 +1,5 @@
 import { Metadata, Viewport } from "next";
+import { Vazirmatn } from 'next/font/google'
 import Script from "next/script";
 // styles
 import "@/styles/globals.css";
@@ -6,13 +7,11 @@ import "@/styles/command-pallette.css";
 import "@/styles/emoji.css";
 import "@/styles/react-day-picker.css";
 // meta data info
-
 import { SITE_DESCRIPTION, SITE_NAME } from "@plane/constants";
 // helpers
 import { API_BASE_URL, cn } from "@/helpers/common.helper";
 // local
 import { AppProvider } from "./provider";
-import { Vazirmatn } from 'next/font/google'
 
 const vazirmatn = Vazirmatn({
   subsets: ['latin'],
